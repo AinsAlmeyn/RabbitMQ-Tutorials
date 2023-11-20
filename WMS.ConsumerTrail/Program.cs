@@ -12,6 +12,11 @@ var busControl = BusFactory.CreateBusWithConsumers(connectionString, cfg =>
     {
         endpoint.Consumer<LocationTrailConsumer>();
     });
+
+    cfg.ReceiveEndpoint("request-queue-trail-second", endpoint =>
+    {
+        endpoint.Consumer<LocationTrailConsumerSecond>();
+    });
 });
 
 await busControl.StartAsync();
