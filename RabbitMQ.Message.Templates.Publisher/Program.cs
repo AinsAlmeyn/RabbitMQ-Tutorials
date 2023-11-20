@@ -103,6 +103,7 @@ consumer.Received += (sender, e) =>
 {
     if (e.BasicProperties.CorrelationId == correlationId)
     {
+
         //....
         Console.WriteLine($"Response : {Encoding.UTF8.GetString(e.Body.Span)}");
     }

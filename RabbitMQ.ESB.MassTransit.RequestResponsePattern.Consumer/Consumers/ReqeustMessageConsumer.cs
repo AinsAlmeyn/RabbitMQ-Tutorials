@@ -14,7 +14,7 @@ namespace RabbitMQ.ESB.MassTransit.RequestResponsePattern.Consumer.Consumers
         {
             //....process
             Console.WriteLine(context.Message.Text);
-            await context.RespondAsync<ResponseMessage>(new() { Text = $"{context.Message.MessageNo}. response to request" });
+            await context.RespondAsync<ResponseMessage>(new() { Text = $"{context.Message.MessageNo}. response to request, DateTime = ${DateTime.Now}" });
         }
     }
 }

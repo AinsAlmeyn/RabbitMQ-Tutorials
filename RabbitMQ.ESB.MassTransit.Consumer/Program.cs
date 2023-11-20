@@ -1,7 +1,7 @@
 ﻿using MassTransit;
 using RabbitMQ.ESB.MassTransit.Consumer.Consumers;
 
-string rabbitMQUri = "amqps://befjdvjy:bs5zD-4j8OfHQrZFUOnEAKomCudYmkL1@moose.rmq.cloudamqp.com/befjdvjy";
+string rabbitMQUri = "amqps://xurpatmp:0_i4Bp07FWJ9PdOPuyYwbwAmPwOkx-Nr@whale.rmq.cloudamqp.com/xurpatmp";
 
 string queueName = "example-queue";
 
