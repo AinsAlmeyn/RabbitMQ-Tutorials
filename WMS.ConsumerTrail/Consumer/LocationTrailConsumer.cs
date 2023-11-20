@@ -1,9 +1,8 @@
-﻿using System;
+﻿using MassTransit;
 using System.Text.Json;
-using MassTransit;
-using WMS.Core.Articles.ConversationArticles.RabbitMqConversation.LocationArticles.Request;
-using WMS.Core.Articles.ConversationArticles.RabbitMqConversation.LocationArticles.Response;
-using WMS.Core.Articles.DbArticles.MongoArticles.LocationArticles;
+using WMS.Core.Articles.Conversation.RabbitMq.Locations.Request;
+using WMS.Core.Articles.Conversation.RabbitMq.Locations.Response;
+using WMS.Core.Articles.Database.MongoDb.Locations;
 
 namespace WMS.ConsumerTrail.Consumer
 {

@@ -1,7 +1,6 @@
 ﻿using MassTransit;
 using WMS.ConsumerTrail.Consumer;
-using WMS.Core.Articles.ConversationArticles.RabbitMqConversation.LocationArticles.Response;
-using WMS.Service.MassTransitPublisher;
+using WMS.Service.QueueManagerService;
 
 Console.WriteLine("CONSUMER");
 string connectionString = "amqps://xurpatmp:0_i4Bp07FWJ9PdOPuyYwbwAmPwOkx-Nr@whale.rmq.cloudamqp.com/xurpatmp";
@@ -13,10 +12,10 @@ var busControl = BusFactory.CreateBusWithConsumers(connectionString, cfg =>
         endpoint.Consumer<LocationTrailConsumer>();
     });
 
-    cfg.ReceiveEndpoint("request-queue-trail-second", endpoint =>
-    {
-        endpoint.Consumer<LocationTrailConsumerSecond>();
-    });
+    //cfg.ReceiveEndpoint("request-queue-trail-second", endpoint =>
+    //{
+    //    endpoint.Consumer<LocationTrailConsumerSecond>();
+    //});
 });
 
 await busControl.StartAsync();
