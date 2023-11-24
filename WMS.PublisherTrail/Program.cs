@@ -1,5 +1,8 @@
 ﻿using Newtonsoft.Json;
 using WMS.Core.Entities.Base;
+using WMS.Core.Entities.Database.MongoDb.LocationEntities;
+using WMS.Service.ServiceConnector.Connectors;
+
 Console.WriteLine("Hello World!");
 
 #region Get request with querystring = Success
@@ -18,5 +21,14 @@ Console.WriteLine("Hello World!");
 //Console.WriteLine(JsonConvert.SerializeObject(result, Formatting.Indented));
 #endregion
 
+
+LocationConnector<Location> locationConnector = new(new WMS.Service.ServiceConnector.ApiClient.BaseUrlContainer() { LocationServiceUrl = "https://localhost:7168/api/Location" });
+var result = await locationConnector.GetAllLocations(new BaseRequest<Location>()
+{
+    Data = null,
+    RequestId = Guid.NewGuid().ToString(),
+    Sender = "WMS.PublisherTrail"
+});
+Console.WriteLine(JsonConvert.SerializeObject(result, Formatting.Indented));
 
 Console.Read();
